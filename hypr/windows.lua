@@ -7,6 +7,3 @@ o.window("^(LM-Studio|lmstudio)$", { opacity = "0.90 0.90" })
 o.window("^(org.telegram.desktop)$", { opacity = "0.90 0.90" })
 o.window("^(brave-discord.*|discord|Discord|vesktop)$", { opacity = "0.90 0.90" })
 o.window("^(brave-origin|brave-browser)$", { opacity = "0.95 0.95" })
-
--- Enable blur behind Omarchy shell popups, bar, menus, and overlays
-hl.layer_rule({ match = { namespace = "^(omarchy-.*|quickshell)$" }, blur = true, blur_popups = true, ignore_alpha = 0.5 })
