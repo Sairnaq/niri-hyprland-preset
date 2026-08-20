@@ -17,9 +17,9 @@ o.bind("SUPER + SHIFT + DOWN", "Move window to workspace below", hl.dsp.window.m
 hl.unbind("SUPER + W")
 o.bind("SUPER + Q", "Close window", hl.dsp.window.close())
 
--- Maximize column width (Niri full-width instead of exclusive fullscreen)
+-- Maximize column width (Niri full-width instead of exclusive fullscreen, allows Super + Left/Right navigation)
 hl.unbind("SUPER + F")
-o.bind("SUPER + F", "Maximize column width", hl.dsp.window.fullscreen({ mode = "maximized" }))
+o.bind("SUPER + F", "Toggle full width column", "omarchy-niri-toggle-fullwidth")
 
 -- Niri Column Stacking / Consume & Expel (Merge or split columns)
 hl.unbind("SUPER + ALT + LEFT")
