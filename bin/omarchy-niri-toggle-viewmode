@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Toggle between Niri Center Column Mode (0) and Side-by-Side Edge-Fit Mode (1)
+
+current=$(hyprctl getoption scrolling:focus_fit_method -j 2>/dev/null | jq -r '.int // 0')
+
+if [ "$current" = "0" ]; then
+    hyprctl eval "hl.config({ scrolling = { focus_fit_method = 1 } })" >/dev/null 2>&1
+    hyprctl eval "hl.dispatch(hl.dsp.layout('fit visible'))" >/dev/null 2>&1
+    notify-send -t 1500 -a "Omarchy" "📑 Side-by-Side Mode" "Windows tile cleanly side-by-side" -i preferences-system-windows 2>/dev/null || true
+else
+    hyprctl eval "hl.config({ scrolling = { focus_fit_method = 0 } })" >/dev/null 2>&1
+    hyprctl eval "hl.dispatch(hl.dsp.layout('fit active'))" >/dev/null 2>&1
+    notify-send -t 1500 -a "Omarchy" "🎯 Center Column Mode" "Active window auto-centered" -i preferences-system-windows 2>/dev/null || true
+fi

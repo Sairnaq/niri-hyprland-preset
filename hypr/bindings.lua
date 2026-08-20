@@ -34,3 +34,7 @@ o.bind("SUPER + SHIFT + R", "Cycle column width preset backward", hl.dsp.layout(
 -- Pop window out (floating & pinned picture-in-picture mode)
 hl.unbind("SUPER + SHIFT + O")
 o.bind("SUPER + SHIFT + O", "Pop window out (float & pin)", "omarchy-hyprland-window-pop")
+
+-- Swap Niri viewing modes: Center Column vs Side-by-Side Edge-Fit
+o.bind("SUPER + M", "Toggle Center / Side-by-Side view mode", "omarchy-niri-toggle-viewmode")
+

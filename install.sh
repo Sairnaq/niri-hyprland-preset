@@ -23,6 +23,11 @@ if [ -f "$TARGET_DIR/looknfeel.lua" ] || [ -f "$TARGET_DIR/input.lua" ] || [ -f 
     echo "$BACKUP_DIR" > "$TARGET_DIR/.last_niri_backup"
 fi
 
+# Copy helper scripts
+mkdir -p "$HOME/.local/bin"
+cp "$SCRIPT_DIR/bin/"* "$HOME/.local/bin/"
+chmod +x "$HOME/.local/bin/omarchy-niri-"*
+
 # Copy preset configs
 cp "$SCRIPT_DIR/hypr/looknfeel.lua" "$TARGET_DIR/looknfeel.lua"
 cp "$SCRIPT_DIR/hypr/input.lua" "$TARGET_DIR/input.lua"
@@ -40,6 +45,7 @@ echo "  • Super + Left / Right         : Navigate horizontal window ribbon"
 echo "  • Super + Up / Down            : Navigate vertically stacked workspaces"
 echo "  • Super + Shift + Up / Down    : Move window to workspace above / below"
 echo "  • Super + R / Shift + R        : Cycle column width preset (33% -> 50% -> 67%)"
+echo "  • Super + M                    : Toggle Center Column vs Side-by-Side View Mode"
 echo "  • Super + Alt + Left / Right   : Stack or unstack window columns (consume/expel)"
 echo "  • Super + F                    : Maximize column width (Niri full-width)"
 echo "  • Super + Q                    : Close active window"

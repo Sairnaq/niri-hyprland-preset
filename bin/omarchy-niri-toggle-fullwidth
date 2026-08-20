@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Toggle active column between 100% full width and 50% default width in Hyprland scrolling layout
+
+active_info=$(hyprctl activewindow -j 2>/dev/null)
+monitor_info=$(hyprctl monitors -j 2>/dev/null)
+
+if [ -z "$active_info" ] || [ "$active_info" = "{}" ]; then
+    exit 0
+fi
+
+is_full=$(jq -n \
+    --argjson win "$active_info" \
+    --argjson mon "$monitor_info" \
+    '($win.size[0] / ($mon[0].width / $mon[0].scale)) > 0.88' 2>/dev/null)
+
+if [ "$is_full" = "true" ]; then
+    hyprctl eval 'hl.dispatch(hl.dsp.layout("colresize 0.5"))' >/dev/null 2>&1
+else
+    hyprctl eval 'hl.dispatch(hl.dsp.layout("colresize 1.0"))' >/dev/null 2>&1
+fi

@@ -59,6 +59,7 @@ To revert anytime:
 | :--- | :--- |
 | **`Super + R`** | Cycle column width preset forward (`33%` → `50%` → `67%`) |
 | **`Super + Shift + R`** | Cycle column width preset backward |
+| **`Super + M`** | Toggle viewing mode (**Center Column** vs. **Side-by-Side Edge-Fit**) |
 | **`Super + Alt + Left`** | Merge with / expel from column on left (Niri consume/expel) |
 | **`Super + Alt + Right`** | Merge with / expel from column on right |
 | **`Super + F`** | Maximize column width (Niri full-width instead of exclusive fullscreen) |
