@@ -38,3 +38,8 @@ o.bind("SUPER + SHIFT + O", "Pop window out (float & pin)", "omarchy-hyprland-wi
 -- Swap Niri viewing modes: Center Column vs Side-by-Side Edge-Fit
 o.bind("SUPER + M", "Toggle Center / Side-by-Side view mode", "omarchy-niri-toggle-viewmode")
 
+-- Precise Column Width Resizing (Fine-grained widen / shrink)
+o.bind("SUPER + BRACKETLEFT", "Make active column thinner (-5%)", hl.dsp.layout("colresize -0.05"))
+o.bind("SUPER + BRACKETRIGHT", "Make active column wider (+5%)", hl.dsp.layout("colresize +0.05"))
+
+

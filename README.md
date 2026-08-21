@@ -59,6 +59,8 @@ To revert anytime:
 | :--- | :--- |
 | **`Super + R`** | Cycle column width preset forward (`33%` → `50%` → `67%`) |
 | **`Super + Shift + R`** | Cycle column width preset backward |
+| **`Super + [`** | Precise resize: make active column thinner (-5%) |
+| **`Super + ]`** | Precise resize: make active column wider (+5%) |
 | **`Super + M`** | Toggle viewing mode (**Center Column** vs. **Side-by-Side Edge-Fit**) |
 | **`Super + Alt + Left`** | Merge with / expel from column on left (Niri consume/expel) |
 | **`Super + Alt + Right`** | Merge with / expel from column on right |
